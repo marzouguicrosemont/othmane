@@ -9,7 +9,7 @@ int main()
     cout << "-----------------------------" << endl;
     int nombre1,nombre2;
     do {
-    cout << "Enter deux nombres  differnts de zero svp:\t";
+    cout << "Enter deux nombres  differents de zero svp:\t";
     cin >> nombre1 >>nombre2;
     } while (nombre1 == 0 || nombre2 ==0);
     cout << endl;

@@ -8,12 +8,17 @@ int main()
     cout << "calculer le PGCD." << endl;
     cout << "-----------------------------" << endl;
     int nombre1,nombre2;
+   char rep;
     do {
+      do {
     cout << "Enter deux nombres  differents de zero svp:\t";
     cin >> nombre1 >>nombre2;
     } while (nombre1 == 0 || nombre2 ==0);
     cout << endl;
     cout << PGCD( nombre1,  nombre2) <<endl;
+   std::cout << "voulez vous contenu" << std::endl;
+    std::cin >> rep;
+    } while (rep != 'n' && rep != 'N');
     return 0;
 }
 

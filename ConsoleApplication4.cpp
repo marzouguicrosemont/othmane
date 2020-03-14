@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -8,7 +9,7 @@ int quantite_de_fractions(int nombre1, int nombre2);
 void simplifie(int x, int y);
 
 void affichage(int tab[], int taille);
-
+int Abs(int X);
 
 int main()
 {
@@ -25,7 +26,7 @@ int main()
     do {
         cout << "Enter nombre_fraction superieur a zero svp:\t";
         cin >> nombre_fraction;
-       } while (nombre_fraction <= 0);
+    } while (nombre_fraction <= 0);
     int h = nombre_fraction * 2;
     int t['h'];
 
@@ -54,12 +55,12 @@ int main()
         simplifie(t[k], t[k + 1]);
         k = k + 2;
 
-       
+
         cout << "-----------------------------" << endl;
 
     }
-   
-   affichage(t, h);
+
+    affichage(t, h);
 
 
 
@@ -88,7 +89,7 @@ int quantite_de_fractions(int nombre1, int nombre2)
     while (nombre1 == 0 || nombre2 == 0)
     {
         cout << "Entrez le Numerateur differnet de zero svp:\t";
-        cin >> nombre1 ;
+        cin >> nombre1;
         cout << "Entrez le Numerateur differnet de zero svp:\t";
         cin >> nombre2;
     }
@@ -111,9 +112,8 @@ int PGCD(int nombre1, int nombre2)
 {
 
     int rest;
-    if (nombre1 < 0) nombre1 = -nombre1;
-    if (nombre2 < 0) nombre2 = -nombre2;
-
+    Abs(nombre1);
+    Abs(nombre2);
     do {
 
         if (nombre1 > nombre2)
@@ -151,4 +151,8 @@ void affichage(int tab[], int taille)
         j = j + 1;
     }
 
+}
+int Abs(int X)
+{
+    return X < 0 ? -X : X;
 }

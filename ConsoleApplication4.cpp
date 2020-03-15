@@ -1,21 +1,21 @@
 
+#include <cstdlib>
 #include <iostream>
 using namespace std;
 
-int PGCD(int nombre1, int nombre2);
 
-int quantite_de_fractions(int nombre1, int nombre2);
+int PGCD(int nombre1, int nombre2);
 
 void simplifie(int x, int y);
 
 void affichage(int tab[], int taille);
-int Abs(int X);
+
+
 
 int main()
 {
     int nombre11, nombre12, nombre_fraction;
     int k = 0;
-
 
 
     cout << "Calcul du Plus Grand Commun Diviseur " << endl;
@@ -35,17 +35,19 @@ int main()
     for (int i = 0; i < nombre_fraction; i++)
 
     {
-
+        do{
         cout << "Entrez le Numerateur et Denominateur differents de zero ou un caractere pour quitter svp:\t";
         cin >> nombre11 >> nombre12;
         if (cin.fail()) {
             cout << "by by" << endl;  goto ss;
 
         }
+        } while (nombre11 == 0 || nombre12 == 0);
 
+        nombre11 = abs(nombre11);   
+        nombre12 = abs(nombre12);
 
-
-        quantite_de_fractions(nombre11, nombre12);
+        cout << "Le Plus Grand Commun Diviseur (PGCD) est:" << PGCD(nombre11, nombre12) << endl;
 
         cout << "-----------------------------" << endl;
 
@@ -81,27 +83,6 @@ ss:;
 
 
 
-int quantite_de_fractions(int nombre1, int nombre2)
-{
-
-
-
-    while (nombre1 == 0 || nombre2 == 0)
-    {
-        cout << "Entrez le Numerateur differnet de zero svp:\t";
-        cin >> nombre1;
-        cout << "Entrez le Numerateur differnet de zero svp:\t";
-        cin >> nombre2;
-    }
-    cout << endl;
-    cout << "Le Plus Grand Commun Diviseur (PGCD) est:" << PGCD(nombre1, nombre2) << endl;
-
-
-
-
-    return nombre1, nombre2;
-
-}
 
 
 
@@ -112,8 +93,7 @@ int PGCD(int nombre1, int nombre2)
 {
 
     int rest;
-    Abs(nombre1);
-    Abs(nombre2);
+    
     do {
 
         if (nombre1 > nombre2)
@@ -152,7 +132,5 @@ void affichage(int tab[], int taille)
     }
 
 }
-int Abs(int X)
-{
-    return X < 0 ? -X : X;
-}
+
+    

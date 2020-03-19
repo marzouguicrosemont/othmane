@@ -21,7 +21,7 @@ int main()
     cout << "Calcul du Plus Grand Commun Diviseur " << endl;
     cout << "-----------------------------" << endl;
 
-
+ system("pause");
 
     do {
         cout << "Enter nombre_fraction superieur a zero svp:\t";

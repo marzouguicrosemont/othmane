@@ -29,7 +29,7 @@ int main()
    
 
     cout << "-----------------------------" << endl;
-    f = quantitefration();
+    f = quantitefraction();
     int h = f * 2;
     int t['h'];
 

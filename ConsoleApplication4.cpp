@@ -8,7 +8,7 @@ int PGCD(int nombre1, int nombre2);
 void simplifie(int x, int y);
 
 void affichage(int tab[], int taille);
-int quantitefration();
+int quantitefraction();
 
 
 int main()
@@ -80,7 +80,7 @@ ss:;
 
 
 
-int quantitefration()
+int quantitefraction()
 
 {
     int nombre_fraction;

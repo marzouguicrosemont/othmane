@@ -1,4 +1,5 @@
 
+
 #include <iostream>
 using namespace std;
 
@@ -26,10 +27,10 @@ int main()
 
     system("pause");
 
-   
+
 
     cout << "-----------------------------" << endl;
-    f = quantitefraction();
+    f =  quantitefraction();
     int h = f * 2;
     int t['h'];
 
@@ -85,7 +86,7 @@ int quantitefraction()
 {
     int nombre_fraction;
 
-      do {
+    do {
         cout << "Enter nombre_fraction superieur a zero svp:\t";
         cin >> nombre_fraction;
         cout << "\a";

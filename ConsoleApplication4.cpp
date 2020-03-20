@@ -1,5 +1,4 @@
 
-#include <cstdlib>
 #include <iostream>
 using namespace std;
 
@@ -9,42 +8,47 @@ int PGCD(int nombre1, int nombre2);
 void simplifie(int x, int y);
 
 void affichage(int tab[], int taille);
-
+int quantitefration();
 
 
 int main()
 {
-    int nombre11, nombre12, nombre_fraction;
+    int nombre11, nombre12;
     int k = 0;
+    int f;
 
 
-    cout << "Calcul du Plus Grand Commun Diviseur " << endl;
+    cout << "Calcul du Plus Grand Commun  diviseur de deux nombres entiers naturels non nuls \n" << endl;
     cout << "-----------------------------" << endl;
 
- system("pause");
 
-    do {
-        cout << "Enter nombre_fraction superieur a zero svp:\t";
-        cin >> nombre_fraction;
-    } while (nombre_fraction <= 0);
-    int h = nombre_fraction * 2;
+
+
+    system("pause");
+
+   
+
+    cout << "-----------------------------" << endl;
+    f = quantitefration();
+    int h = f * 2;
     int t['h'];
 
     cout << "-----------------------------" << endl;
 
-    for (int i = 0; i < nombre_fraction; i++)
+    for (int i = 0; i < f; i++)
 
     {
-        do{
-        cout << "Entrez le Numerateur et Denominateur differents de zero ou un caractere pour quitter svp:\t";
-        cin >> nombre11 >> nombre12;
-        if (cin.fail()) {
-            cout << "by by" << endl;  goto ss;
+        do {
+            cout << "Entrez le Numerateur et Denominateur differents de zero ou un caractere pour quitter svp:\t";
+            cin >> nombre11 >> nombre12;
+            cout << "\a";
+            if (cin.fail()) {
+                cout << "by by" << endl;  goto ss;
 
-        }
+            }
         } while (nombre11 == 0 || nombre12 == 0);
 
-        nombre11 = abs(nombre11);   
+        nombre11 = abs(nombre11);
         nombre12 = abs(nombre12);
 
         cout << "Le Plus Grand Commun Diviseur (PGCD) est:" << PGCD(nombre11, nombre12) << endl;
@@ -76,14 +80,20 @@ ss:;
 
 
 
+int quantitefration()
 
+{
+    int nombre_fraction;
 
+      do {
+        cout << "Enter nombre_fraction superieur a zero svp:\t";
+        cin >> nombre_fraction;
+        cout << "\a";
+    } while (nombre_fraction <= 0);
 
+    return nombre_fraction;
 
-
-
-
-
+}
 
 
 
@@ -93,7 +103,7 @@ int PGCD(int nombre1, int nombre2)
 {
 
     int rest;
-    
+
     do {
 
         if (nombre1 > nombre2)
@@ -117,12 +127,15 @@ int PGCD(int nombre1, int nombre2)
     return nombre1;
 }
 
+
 void simplifie(int x, int y)
 {
     cout << x << "/" << y << ">>>" << x / PGCD(x, y) << "/" << y / PGCD(x, y) << endl;
 
 
 }
+
+
 void affichage(int tab[], int taille)
 {
     for (int j = 0; j < taille; j++)
@@ -132,5 +145,3 @@ void affichage(int tab[], int taille)
     }
 
 }
-
-    
